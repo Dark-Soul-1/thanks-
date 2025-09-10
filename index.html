@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Thanks Cutiee 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow-x: hidden;
+    }
+    .container {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      max-width: 450px;
+      width: 90%;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    h1, p {
+      margin: 10px 0;
+      color: #444;
+      word-wrap: break-word;
+    }
+    button {
+      margin: 10px;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      background: #ee9ca7;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.3s;
+      width: 120px;
+    }
+    button:hover, button:active {
+      transform: scale(1.1);
+      background: #ff4d6d;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hidden { display: none; }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+      }
+      .container {
+        padding: 20px;
+        max-width: 95%;
+      }
+      h1 {
+        font-size: 1.3rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      button {
+        width: 100px;
+        font-size: 0.9rem;
+        padding: 10px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="page1">
+    <h1>Hello Cutiee 💕</h1>
+    <p>i know tum mujhe thanks bol na chahati ho , koi na cutiee ,</p>
+    <p>so the best way to thanks me is mere sathe ek coffee pe chal lo ☕</p>
+    <button onclick="showPage('surprise')">Yes</button>
+    <button onclick="showPage('chai')">No</button>
+  </div>
+
+  <div class="container hidden" id="surprise">
+    <h1>Yay! Coffee Date Confirmed! ❤️☕</h1>
+    <p>Get ready cutiee, it's gonna be special! ✨</p>
+  </div>
+
+  <div class="container hidden" id="chai">
+    <h1>Chai b chalegi 🍵</h1>
+    <p>Toh bolo cutiee, chaloge?</p>
+    <button onclick="showPage('chaiYes')">Yes</button>
+    <button onclick="showPage('sad')">No</button>
+  </div>
+
+  <div class="container hidden" id="chaiYes">
+    <h1>Perfect! Chai Date it is! ☕😊</h1>
+    <p>Bas tum aur main, aur ek garam chai ki pyali 💖</p>
+  </div>
+
+  <div class="container hidden" id="sad">
+    <h1>😢💔</h1>
+    <p>thik hai cutiee ajj raat ko tume sapno me darauga 🌙</p>
+  </div>
+
+  <script>
+    function showPage(id) {
+      document.querySelectorAll('.container').forEach(el => el.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
